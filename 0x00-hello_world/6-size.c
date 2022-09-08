@@ -1,4 +1,4 @@
-#include<studio.h>
+#include<stdio.h>
 /**
  * main - prints the size of many var types
  *
@@ -17,5 +17,5 @@ int main(void)
 	prinf("Size of a long int: %d byte(s)\n", size of (c));
 	prinf("Size of a long long int: %d byte(s)\n", size of (d));
 	prinf("Size of a float: %d byte(s)\n", size of (e));
-	return(0);
+	return (0);
 }

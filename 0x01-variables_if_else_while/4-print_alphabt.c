@@ -7,17 +7,13 @@
  */
 int main(void)
 {
-	int c,
+	int c;
 
-	   (for c = 97; c <= 122; c++)
-	    {
-		    putchar(c);
-	    }
-
-	for (c = 65; c <= 90; c++)
+	for (c = 97; c <= 122; c++)
 	{
-		putchar(c);
+		if (c != 101 && c != 113)
+			putchar(c);
 	}
 	putchar(10);
 	return (0);
-i}
+}

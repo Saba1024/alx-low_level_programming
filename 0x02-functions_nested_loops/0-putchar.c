@@ -1,9 +1,8 @@
 #include <main.h>
 
 /**
- * main - put character
- *
- * Return: Always 0
+ * main - print putchar
+ * Return: always 0
  */
 
 int main(void)
@@ -18,5 +17,5 @@ int main(void)
 	_putchar('r');
 	_putchar('\n');
 
-	return(0);
+	return (0);
 }

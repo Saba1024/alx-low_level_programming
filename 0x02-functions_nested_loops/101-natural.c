@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 /**
- *
- * main -main block to be excuted
+ * main - main block to be excuted
  * description: computes and prints
  * Return: 0
  */

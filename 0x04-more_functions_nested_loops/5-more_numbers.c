@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * void more_numbers - prints numbers to 14
+ * more_numbers - prints numbers to 14
  *
  * Return: return nothing
  */

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "main.c"
+#include "main.h"
 
 /**
  * void more_numbers - prints numbers to 14

@@ -1,19 +1,19 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main - program that prints either number
- * or fizz or buzz or fizzBuzz
+ * fizz_buzz - printing numbers
  *
  * Return: returns 0
  */
 
-int main(void)
+void fizz_buzz(void)
 {
 	int x;
 
 	for (x = 1; x <= 100; x++)
 	{
-		if ((x % 3 == 0) && (x % 5 == 0))
+		if (x % 3 == 0 && x % 5 == 0)
 			printf("FizzBuzz ");
 		else if ((x % 3) == 0)
 			printf("Fizz ");

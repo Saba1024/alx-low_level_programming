@@ -1,13 +1,13 @@
-#include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * fizz_buzz - printing numbers
+ * main - printing numbers
  *
  * Return: returns 0
  */
 
-void fizz_buzz(void)
+int main(void)
 {
 	int x;
 
@@ -23,4 +23,5 @@ void fizz_buzz(void)
 			printf("%d ", x);
 	}
 	printf("\n");
+	return (0);
 }

@@ -2,11 +2,10 @@
 
 /**
  * _puts - a function that prints a string
- * @str: a parameter to put 
- * Return: always 0
+ * @str: a parameter to _puts
  */
 
-void _puts(char * str)
+void _puts(char *str)
 {
 	for (; *str != '\0'; str++)
 	{

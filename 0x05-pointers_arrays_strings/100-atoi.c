@@ -3,26 +3,38 @@
 /**
  * _atoi - convert to a int
  * @s: string
- * Return: int
+ * Return: a integer
  */
 
 int _atoi(char *s)
 {
-	int i, j, n, x;
-	
-	i = n = 0;
-	x = 1;
-	while ((s[i] < '0' || s[i] > '9') && (s[i] != '\0'))
+	int c = 0;
+	unsigned int ni = 0;
+	int min = 1;
+	int isi = 0;
+
+	while (s[c])
 	{
-		if (s[i] == '-')
-			x *= -1;
-		i++;
-	}
-	j = i;
-	while ((s[j] >= '0') && (s[j] <= '9'))
+		if (s[c] == 45)
+		{
+			min *= -1;
+		}
+		while (s[c] >= 48 && s[c] <= 57)
+		{
+			isi = 1;
+			ni = (ni * 10) + (s[c] - '0');
+
+		c++;
+		}
+
+	if (isi == 1)
 	{
-		n = (n * 10) + x * ((s[j]) - '0');
-		j++;
+	break;
 	}
-	return (n);
+
+c++;
+	}
+
+	ni *= min;
+	return (ni);
 }

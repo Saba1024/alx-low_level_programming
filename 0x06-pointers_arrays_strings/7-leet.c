@@ -7,15 +7,21 @@
  */
 char *leet(char *n)
 {
-	int i = 0, j;
-	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
-	while (n[++i])
+	int i = 0, b, l = 5;
+	char tr[5] = {'A', 'E', 'O', 'T', 'L'};
+	char trw[5] = {'4', '3', '0', '7', '1'};
+
+	while (n[i])
 	{
-		for (i = 0; j <= 7; j++)
+		b = 0;
+
+		while (b < l)
 		{
-			if (n[i] == leet[j] || n[i] - 32 == leet[j])
-				n[i] = j + '0';
+			if (n[i] == tr[b] || n[i] - 32 == tr[b])
+				n[i] = trw[b];
+			b++;
 		}
+		i++;
 	}
 	return (n);
 }

@@ -2,45 +2,29 @@
 
 /**
  * rot13 - a function that encodes a string using rot13.
- * @str: string to be encoded
+ * @s: string to be encoded
  *
  * Return: address of the encoded string
  */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	int i = 0;
+	int i, j;
 
-	while (str[i] != '\0')
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0';
+			i++)
 	{
-		str[i] = transform_2(str[i]);
-		i++;
-	}
-	return (str);
-}
-
-/**
- * transform_2 - helper function to map aletter
- * @x: char to be encoded
- *
- * Return: the encoded char
- */
-
-char transform_2(char x)
-{
-	char one[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char two[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i = 0;
-	char replacement = x;
-	
-	while (i < 52)
-	{
-		if (x == one[i])
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			replacement = two[i];
-			break;
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+				break;
+			}
 		}
-		i++;
 	}
-	return (replacement);
+	return (s);
 }

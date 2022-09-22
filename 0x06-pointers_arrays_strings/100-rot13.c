@@ -6,6 +6,7 @@
  *
  * Return: address of the encoded string
  */
+
 char *rot13(char *str)
 {
 	int i = 0;
@@ -16,4 +17,30 @@ char *rot13(char *str)
 		i++;
 	}
 	return (str);
+}
+
+/**
+ * transform_2 - helper function to map aletter
+ * @x: char to be encoded
+ *
+ * Return: the encoded char
+ */
+
+char transform_2(char x)
+{
+	char one[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char two[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0;
+	char replacement = x;
+	
+	while (i < 52)
+	{
+		if (x == one[i])
+		{
+			replacement = two[i];
+			break;
+		}
+		i++;
+	}
+	return (replacement);
 }

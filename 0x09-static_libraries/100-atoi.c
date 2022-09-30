@@ -1,48 +1,39 @@
 #include "main.h"
 
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
- * Return: the int converted from the string
+ * _atoi - Converts a string to an integer
+ * @s: The string
+ *
+ * Return: The converted integer
  */
-
 int _atoi(char *s)
 {
-	int num, len, numcount, mult, x, neg;
-
-	len = 0;
-	x = 0;
-	numcount = 0;
-	mult = 1;
-	neg = 1;
-	num = 0;
-
-	while (s[len] != '\0')
+	int i, value, sign;
+	char c;
+	
+	i = 0;
+	value = 0;
+	sign = -1;
+	while (s[i] != '\0')
 	{
-		if (s[len] >= '0' && s[len] <= '9')
+		c = s[i];
+		if (c == '-')
+			sign *= -1;
+		else if (c >= '0' && c <= '9')
 		{
-			numcount++;
-			if (!(s[len + 1] >= '0' && s[len + 1] <= '9'))
+			if (value < 0)
+				value = value * 10 - (c - '0');
+			else
+				value = (c - '0') * -1;
+			
+			/* Make sure the next char is a number */
+			if (s[i + 1] < '0' || s[i + 1] > '9')
 				break;
 		}
-		len++;
+		i++;
 	}
-
-	for (; numcount > 1; numcount--)
-	{
-		mult *= 10;
-	}
-
-	for (; x <= len; x++)
-	{
-		if (s[x] == '-')
-			neg *= -1;
-		else if (s[x] <= '9' && s[x] >= '0')
-		{
-			num += (s[x] - '0') * mult * neg;
-			mult /= 10;
-		}
-	}
+	if (sign < 0)
+		value *= -1;
 	
-	return (num);
+	return (value);
 }

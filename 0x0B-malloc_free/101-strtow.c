@@ -1,5 +1,6 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "main.h"
 /**
  * wordnos - count number of words in a given string
  * @s: pointer to the string
@@ -74,4 +75,3 @@ char **strtow(char *str)
 
 	return (matrix);
 }
-

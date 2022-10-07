@@ -106,7 +106,7 @@ void init(char *str, int l)
  */
 int main(int argc, char argv[])
 {
-	int la, l2, ln, ti, i;
+	int l1, l2, ln, ti, i;
 	char *a;
 	char *t;
 	char e[] = "Eroor\n";

@@ -6,32 +6,27 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *node1, *node2;
+	listint_t *slow = head;
+	listint_t *fast = head;
 
-	if (head == NULL || head->next == NULL)
+	if (!head)
 		return (NULL);
 
-	node1 = head->next;
-	node2 = (head->next)->next;
-
-	while (node2)
+	while (slow && fast && fast->next)
 	{
-		if (node1 == node2)
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow)
 		{
-			node1 = head;
-
-			while (node1 != node 2)
+			slow = head;
+			while (slow != fast)
 			{
-				node1 = node1->next;
-				node2 = node2->next;
+				slow = slow->next;
+				fast = fast->next;
 			}
-
-			return (node1);
+			return (fast);
 		}
-		
-		node1 = node1->next;
-		node2 = (node2->next)->next;
 	}
-	
+
 	return (NULL);
 }

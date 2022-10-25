@@ -9,7 +9,8 @@ size_t print_listint_safe(const listint_t *head);
  *                     in a looped listint_t linked list.
  * @head: head of a list
  *
- * Return: no return
+ * Return: If the list is not looped - 0.
+ *	  Otherwise - the number of unique nodes in the list.
  */
 size_t print_listint_safe(const listint_t *head)
 {
@@ -51,20 +52,6 @@ size_t print_listint_safe(const listint_t *head)
 	return (0);
 }
 
-	listp_t *curr;
-
-	if (head != NULL)
-	{
-		curr = *head;
-		while ((temp = curr) != NULL)
-		{
-			curr = curr->next;
-			free(temp);
-		}
-		*head = NULL;
-	}
-}
-
 /**
  * print_listint_safe - prints a linked list
  * @head: head of a list.
@@ -76,7 +63,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t nodes, index = 0;
 
 	nodes = looped_listint_len(head);
-	
+
 	if (nodes == 0)
 	{
 		for (; head != NULL; nodes++)
@@ -85,7 +72,7 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		}
 	}
-	
+
 	else
 	{
 		for (index = 0; index < nodes; index++)
@@ -93,9 +80,9 @@ size_t print_listint_safe(const listint_t *head)
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
-		
+
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
-	
+
 	return (nodes);
 }
